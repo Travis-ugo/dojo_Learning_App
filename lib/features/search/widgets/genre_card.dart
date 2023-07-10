@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fugoku/core/widgets/text.dart';
 
+// widget card, for all available genre categories
 class GenreCard extends StatelessWidget {
   const GenreCard({super.key});
 
