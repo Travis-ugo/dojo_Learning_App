@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fugoku/core/text.dart';
+import 'package:fugoku/core/widgets/text.dart';
 
 class MediaAppBar extends StatelessWidget {
   const MediaAppBar({super.key});

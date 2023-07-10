@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fugoku/core/text.dart';
+import 'package:fugoku/core/widgets/text.dart';
 
 class InfoTile extends StatelessWidget {
   const InfoTile({
