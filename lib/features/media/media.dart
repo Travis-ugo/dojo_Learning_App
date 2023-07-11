@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fugoku/core/text.dart';
+import 'package:fugoku/core/widgets/text.dart';
 import 'package:fugoku/features/media/widgets/media_app_bar.dart';
 import 'package:fugoku/features/media/widgets/media_pause_and_play.dart';
 import 'package:fugoku/features/media/widgets/sound_seek_progress.dart';

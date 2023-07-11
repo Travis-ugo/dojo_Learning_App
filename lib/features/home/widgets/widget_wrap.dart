@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fugoku/core/text.dart';
+import 'package:fugoku/core/widgets/text.dart';
 
 class WidgetWrap extends StatelessWidget {
   const WidgetWrap({super.key, required this.label});

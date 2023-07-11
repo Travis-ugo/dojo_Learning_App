@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fugoku/core/text.dart';
+import 'package:fugoku/core/widgets/text.dart';
+
+import 'widgets/genre_card.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -49,7 +51,7 @@ class Search extends StatelessWidget {
                   hintStyle: TextStyle(
                       color: Colors.grey[700],
                       fontWeight: FontWeight.w700,
-                      fontSize: 16),
+                      fontSize: 16,),
                   prefixIcon: Icon(
                     CupertinoIcons.search,
                      size: 30,
@@ -75,17 +77,12 @@ class Search extends StatelessWidget {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 6.4 / 3.6,
               crossAxisCount: 2,
+                   crossAxisSpacing: 8.0,
+                  mainAxisSpacing: 8.0,
             ),
             itemCount: 10,
             itemBuilder: (context, index) {
-              return Container(
-                height: 100,
-                margin: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: Colors.purple,
-                  borderRadius: BorderRadius.circular(5),
-                ),
-              );
+              return GenreCard();
             },
           ),
         ],

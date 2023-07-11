@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:fugoku/core/mock_data.dart';
-import 'package:fugoku/core/text.dart';
+import 'package:fugoku/core/widgets/text.dart';
 import 'package:fugoku/features/details/widgets/info_tile.dart';
 import 'package:fugoku/features/details/widgets/info_tile_without.dart';
 import 'package:fugoku/features/home/widgets/cirular_with_label.dart';
