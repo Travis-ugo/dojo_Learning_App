@@ -1,5 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'package:fugoku/core/mock_data.dart';
 import 'package:fugoku/core/widgets/text.dart';
 import 'package:fugoku/features/media/widgets/media_app_bar.dart';
 import 'package:fugoku/features/media/widgets/media_pause_and_play.dart';
@@ -7,7 +10,11 @@ import 'package:fugoku/features/media/widgets/sound_seek_progress.dart';
 import 'package:fugoku/features/media/widgets/title_favourite.dart';
 
 class MediaView extends StatelessWidget {
-  const MediaView({super.key});
+  final DataModel mockData;
+  const MediaView({
+    Key? key,
+    required this.mockData,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +27,21 @@ class MediaView extends StatelessWidget {
           Container(
             height: 300,
             width: 300,
-            color: Colors.grey[300],
             margin: const EdgeInsets.symmetric(vertical: 20.0),
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  "assets/images/${mockData.imagePath ?? ""}",
+                ),
+              ),
+            ),
           ),
-          const TitleAndFavourite(),
+          TitleAndFavourite(
+            musicTitle: mockData.songTitle ?? "NO Sound",
+            artistName: mockData.artistName ?? "No Name",
+          ),
           const SoundSeekProgress(),
           const MediaPauseAndPlayWidget(),
           Padding(

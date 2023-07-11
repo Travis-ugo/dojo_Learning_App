@@ -101,7 +101,9 @@ class Details extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: ((context) => const MediaView()),
+                        builder: ((context) => MediaView(
+                              mockData: mockData,
+                            )),
                       ),
                     );
                   },
@@ -127,19 +129,21 @@ class Details extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const SquareWithLabel(
+                  return SquareWithLabel(
                     size: 120,
+                    mockData: mockData,
                   );
                 },
               ),
             ),
           ),
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: SquareWithLabel(
                 size: 55,
                 direction: Axis.horizontal,
+                mockData: mockData,
               ),
             ),
           ),
@@ -148,6 +152,7 @@ class Details extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CircularWithLabel(
                 size: 55,
+                mockData: mockData,
                 direction: Axis.horizontal,
                 onTap: () {},
               ),
