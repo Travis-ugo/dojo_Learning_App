@@ -13,9 +13,14 @@ class MediaAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Icon(
-            CupertinoIcons.chevron_down,
-            size: 25,
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(
+              CupertinoIcons.chevron_down,
+              size: 25,
+            ),
           ),
           Column(
             children: const [
@@ -41,4 +46,3 @@ class MediaAppBar extends StatelessWidget {
     );
   }
 }
-
