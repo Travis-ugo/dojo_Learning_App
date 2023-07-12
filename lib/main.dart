@@ -23,15 +23,15 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark, 
         scaffoldBackgroundColor: const Color(0xFF121111),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key,});
 
-  final String title;
+ 
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -81,18 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      // appBar: PreferredSize(
-      //   child: AppBar(
-      //     actions: [
-      //       IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.home)),
-      //     ],
-      //     title: Text(widget.title),
-      //   ),
-      //   preferredSize: Size(
-      //     double.maxFinite,
-      //     200.0,
-      //   ),
-      // ),
+     
       body: PageView(
         controller: _pageController,
         children: const [
@@ -107,13 +96,3 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 
-class TestPage extends StatelessWidget {
-  const TestPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black12,
-    );
-  }
-}

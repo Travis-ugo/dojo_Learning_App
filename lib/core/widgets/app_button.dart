@@ -29,10 +29,12 @@ class AppButton extends StatelessWidget {
       onPressed: onTap,
       color: buttonMaterialColor,
       minWidth: buttonMinWidth,
-      height: 55,
-       padding:const EdgeInsets.symmetric(horizontal: 30),
+      height: 60,
+      elevation: 0.0,
+       padding:const EdgeInsets.symmetric(horizontal: 40),
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(150),
+        borderSide: BorderSide.none,
       ),
       child: AppText(
         text: buttonText,
