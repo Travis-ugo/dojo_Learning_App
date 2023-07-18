@@ -19,113 +19,128 @@ class MediaView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        padding: const EdgeInsets.all(30),
-        children: [
-          const SizedBox(height: 20),
-          const MediaAppBar(),
-          Container(
-            height: 300,
-            width: 300,
-            margin: const EdgeInsets.symmetric(vertical: 20.0),
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  "assets/images/${mockData.imagePath ?? ""}",
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              mockData.color,
+              Colors.transparent,
+            ],
+          ),
+        ),
+        child: ListView(
+          padding: const EdgeInsets.all(30),
+          children: [
+            const SizedBox(height: 20),
+            const MediaAppBar(),
+            Hero(
+              tag: mockData.imagePath ?? "hero",
+              child: Container(
+                height: 350,
+                width: 300,
+                margin: const EdgeInsets.symmetric(vertical: 20.0),
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      "assets/images/${mockData.imagePath ?? ""}",
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-          TitleAndFavourite(
-            musicTitle: mockData.songTitle ?? "NO Sound",
-            artistName: mockData.artistName ?? "No Name",
-          ),
-          const SoundSeekProgress(),
-          const MediaPauseAndPlayWidget(),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
-            child: Row(
-              children: const [
-                Icon(
-                  CupertinoIcons.device_laptop,
-                  color: Colors.greenAccent,
-                ),
-                SizedBox(width: 15),
-                AppText(
-                  text: "TRAVIS'S MACBOOK PRO",
-                  fontColor: Colors.greenAccent,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
-                Spacer(),
-                Icon(Icons.share_outlined),
-              ],
+            TitleAndFavourite(
+              musicTitle: mockData.songTitle ?? "NO Sound",
+              artistName: mockData.artistName ?? "No Name",
             ),
-          ),
-          Container(
-            height: 300,
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.grey[600],
-              borderRadius: BorderRadius.circular(10),
+            const SoundSeekProgress(),
+            const MediaPauseAndPlayWidget(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              child: Row(
+                children: const [
+                  Icon(
+                    CupertinoIcons.device_laptop,
+                    color: Colors.greenAccent,
+                  ),
+                  SizedBox(width: 15),
+                  AppText(
+                    text: "TRAVIS'S MACBOOK PRO",
+                    fontColor: Colors.greenAccent,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  Spacer(),
+                  Icon(Icons.share_outlined),
+                ],
+              ),
             ),
-            margin: const EdgeInsets.symmetric(vertical: 20.0),
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    AppText(
-                      text: 'Lyrics',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 18,
-                    ),
-                    Spacer(),
-                    CircleAvatar(
-                      radius: 19,
-                      child: Icon(
-                        Icons.share_outlined,
-                        color: Colors.white,
-                        size: 18,
+            Container(
+              height: 300,
+              width: 300,
+              decoration: BoxDecoration(
+                color: Colors.grey[600],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              margin: const EdgeInsets.symmetric(vertical: 20.0),
+              padding: const EdgeInsets.all(15),
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const AppText(
+                        text: 'Lyrics',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
                       ),
-                      backgroundColor: Colors.grey[700],
-                    ),
-                    SizedBox(width: 20),
-                    CircleAvatar(
-                      radius: 19,
-                      child: Icon(
-                        Icons.expand_outlined,
-                        color: Colors.white,
-                        size: 18,
+                      const Spacer(),
+                      CircleAvatar(
+                        radius: 19,
+                        backgroundColor: Colors.grey[700],
+                        child: const Icon(
+                          Icons.share_outlined,
+                          color: Colors.white,
+                          size: 18,
+                        ),
                       ),
-                      backgroundColor: Colors.grey[700],
-                    ),
-                  ],
-                ),
-              ],
+                      const SizedBox(width: 20),
+                      CircleAvatar(
+                        radius: 19,
+                        backgroundColor: Colors.grey[700],
+                        child: const Icon(
+                          Icons.expand_outlined,
+                          color: Colors.white,
+                          size: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          Container(
-            height: 200,
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.grey[600],
-              borderRadius: BorderRadius.circular(10),
+            Container(
+              height: 200,
+              width: 300,
+              decoration: BoxDecoration(
+                color: Colors.grey[600],
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
-          ),
-          Container(
-            height: 200,
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.grey[600],
-              borderRadius: BorderRadius.circular(10),
+            Container(
+              height: 200,
+              width: 300,
+              decoration: BoxDecoration(
+                color: Colors.grey[600],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              margin: const EdgeInsets.symmetric(vertical: 15.0),
             ),
-            margin: const EdgeInsets.symmetric(vertical: 15.0),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

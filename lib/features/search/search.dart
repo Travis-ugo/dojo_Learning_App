@@ -14,7 +14,7 @@ class Search extends StatelessWidget {
         slivers: [
           const SliverToBoxAdapter(
             child: SizedBox(
-              height: 120,
+              height: 100,
             ),
           ),
           SliverToBoxAdapter(
@@ -49,12 +49,13 @@ class Search extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: 'Artists, songs, or podcasts',
                   hintStyle: TextStyle(
-                      color: Colors.grey[700],
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,),
+                    color: Colors.grey[700],
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                  ),
                   prefixIcon: Icon(
                     CupertinoIcons.search,
-                     size: 30,
+                    size: 30,
                     color: Colors.grey[700],
                   ),
                   border: InputBorder.none,
@@ -77,12 +78,12 @@ class Search extends StatelessWidget {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 6.4 / 3.6,
               crossAxisCount: 2,
-                   crossAxisSpacing: 8.0,
-                  mainAxisSpacing: 8.0,
+              crossAxisSpacing: 8.0,
+              mainAxisSpacing: 8.0,
             ),
             itemCount: 10,
             itemBuilder: (context, index) {
-              return GenreCard();
+              return const GenreCard();
             },
           ),
         ],

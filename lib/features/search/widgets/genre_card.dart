@@ -9,6 +9,7 @@ class GenreCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100,
+      // width: 200,
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.purple,

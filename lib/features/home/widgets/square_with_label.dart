@@ -24,7 +24,7 @@ class SquareWithLabel extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 10,
-        horizontal: 5,
+        horizontal: 8,
       ),
       child: SizedBox(
         width: size,

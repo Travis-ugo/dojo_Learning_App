@@ -1,5 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:fugoku/core/mock_data.dart';
 import 'package:fugoku/core/widgets/text.dart';
 import 'package:fugoku/features/details/details.dart';
@@ -81,16 +83,18 @@ class Home extends StatelessWidget {
                 ),
                 itemCount: 6,
                 itemBuilder: (context, index) {
-                  return RectangleSlide(mockData: mockDataBase[index], 
-                  
-                   onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: ((context) =>  Details(mockData:  mockDataBase[index],)),
-                          ),
-                        );
-                      },
+                  return RectangleSlide(
+                    mockData: mockDataBase[index],
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) => Details(
+                                mockData: mockDataBase[index],
+                              )),
+                        ),
+                      );
+                    },
                   );
                 },
               ),
@@ -107,20 +111,22 @@ class Home extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: SizedBox(
-                height: 200,
+                height: 250,
                 child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   scrollDirection: Axis.horizontal,
                   itemCount: mockDataBase.length,
                   itemBuilder: (context, index) {
                     return CircularWithLabel(
-                      size: 120,
+                      size: 180,
                       mockData: mockDataBase[index],
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: ((context) =>  Details(mockData:  mockDataBase[index],)),
+                            builder: ((context) => Details(
+                                  mockData: mockDataBase[index],
+                                )),
                           ),
                         );
                       },
@@ -141,27 +147,27 @@ class Home extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: SizedBox(
-                height: 200,
+                height: 280,
                 child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   scrollDirection: Axis.horizontal,
                   itemCount: mockDataBase.length,
                   itemBuilder: (context, index) {
                     return SquareWithLabel(
-                      size: 120,
+                      size: 200,
                       mockData: mockDataBase[index],
                     );
                   },
                 ),
               ),
             ),
-           SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: SquareWithLabel(
                   size: 55,
                   direction: Axis.horizontal,
-                  mockData:  mockDataBase[0],
+                  mockData: mockDataBase[0],
                 ),
               ),
             ),
@@ -170,7 +176,7 @@ class Home extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: CircularWithLabel(
                   size: 55,
-                   mockData:  mockDataBase[5],
+                  mockData: mockDataBase[5],
                   direction: Axis.horizontal,
                   onTap: () {},
                 ),

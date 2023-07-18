@@ -8,29 +8,14 @@ class SoundSeekProgress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: 4,
-          width: double.infinity,
-          margin: const EdgeInsets.symmetric(vertical: 10.0),
-          decoration: BoxDecoration(
-            color: Colors.grey[700],
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Row(
-            children: [
-              Container(
-                height: 4,
-                width: 100,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              const SizedBox(height: 0),
-            ],
-          ),
+        const SizedBox(height: 15),
+        LinearProgressIndicator(
+          value: 0.40,
+          backgroundColor: Colors.white.withOpacity(0.3),
+          color: const Color.fromARGB(255, 255, 255, 255),
+          minHeight: 4,
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
