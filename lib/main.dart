@@ -1,17 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fugoku/core/mock_data.dart';
-import 'package:fugoku/core/widgets/text.dart';
-import 'package:fugoku/features/details/details.dart';
-import 'package:fugoku/features/home/home.dart';
+import 'package:fugoku/core/mock_data.dart'; 
 import 'package:fugoku/features/home/home.dart';
 import 'package:fugoku/features/home/widgets/on_playing_widget.dart';
 import 'package:fugoku/features/media/media.dart';
+import 'package:fugoku/features/media/mock.dart';
 import 'package:fugoku/features/premium/premium.dart';
 import 'package:fugoku/features/search/search.dart';
 import 'package:fugoku/features/your_library/your_library.dart';
+import 'package:just_audio_background/just_audio_background.dart';
 
-void main() {
+Future<void> main() async {
+   await JustAudioBackground.init(
+    androidNotificationChannelId: 'com.ryanheise.bg_demo.channel.audio',
+    androidNotificationChannelName: 'Audio playback',
+    androidNotificationOngoing: true,
+  );
   runApp(const MyApp());
 }
 
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF121111),
       ),
-      home: const MyHomePage(),
+      home: const MockAudioPlayer(),
     );
   }
 }
